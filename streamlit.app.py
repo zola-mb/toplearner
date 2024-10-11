@@ -33,17 +33,63 @@ st.write("---")
 
 #Import data
 df = pd.read_excel("2025 Top Learner  High School - Main 20240912 (2).xlsx", sheet_name="Other Universities")
+hs = pd.read_excel("2025 Top Learner  High School - Main 20240912 (2).xlsx", sheet_name="High School")
 #Raw data
 #st.header("Raw Data")
 #df
 
+#st.dataframe(hs)
+#Top Learners by Gender
+st.subheader("Stats on Top Learners")
+
 #Number of schools
-st.subheader("Number of learners per High School")
+#st.subheader("Number of learners per High School")
 schools_df = df["School"].value_counts().reset_index()
 schools_df.columns = ['School', 'Count']
-
 fig = px.bar(schools_df, x='School', y='Count', title='TLs per School')
 st.plotly_chart(fig)
+
+intake = hs["Intake"].value_counts().reset_index()
+fig_intake = px.bar(intake, x="Intake", y="count", title="TLs by Intake")
+st.plotly_chart(fig_intake)
+intake
+
+gender = hs["Gender"].value_counts().reset_index()
+fig_gender = px.bar(gender, x="Gender", y="count", title="TLs by Gender")
+st.plotly_chart(fig_gender)
+gender
+
+#Top Learners by Region
+region = hs["Region"].value_counts().reset_index()
+fig_region = px.bar(region, x="Region", y="count", title="TLs by Region")
+st.plotly_chart(fig_region)
+region
+
+#TL Houses
+house = hs["House Type"].value_counts().reset_index()
+fig_house = px.bar(house, x="House Type", y="count", title="TL Houses")
+st.plotly_chart(fig_house)
+house
+
+#TLs Living with their Father
+live_mother = hs["Live with Mother"].value_counts().reset_index()
+fig_mother = px.bar(live_mother, x="Live with Mother", y="count", title="TLs who live with their mother")
+st.plotly_chart(fig_mother)
+live_mother
+
+#TLs Living with their Father
+live_father = hs["Live with Father"].value_counts().reset_index()
+fig_father = px.bar(live_father, x="Live with Father", y="count", title="TLs who live with their father")
+st.plotly_chart(fig_father)
+live_father
+
+#Financial Support
+financial_support = hs["Financial Support Type"].value_counts().reset_index()
+fig_financial_support = px.bar(financial_support, x="Financial Support Type", y="count", title="TLs' Source of Financial Support")
+st.plotly_chart(fig_financial_support)
+financial_support
+
+st.write("---")
 
 #Applications
 #st.header("University Applications")
@@ -74,7 +120,7 @@ application_counts = {
 df_application_counts = pd.DataFrame(application_counts)
 
 # Display the dataframe
-st.subheader("Total Applications per University")
+st.subheader("Stats on University Applications")
 
 # Create a bar chart for application counts
 fig_applications = px.bar(df_application_counts, x='University', y='Application Count', title='Total Applications per University')
