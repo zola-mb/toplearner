@@ -7,7 +7,7 @@
 
 #Import libraries
 import pandas as pd
-#import openpyxl as py
+import openpyxl as py
 import streamlit as st
 import plotly.express as px
 from pygments.lexers import go
