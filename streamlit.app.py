@@ -50,42 +50,42 @@ fig = px.bar(schools_df, x='School', y='Count', title='TLs per School')
 st.plotly_chart(fig)
 
 intake = hs["Intake"].value_counts().reset_index()
-fig_intake = px.bar(intake, x="Intake", y="count", title="TLs by Intake")
+fig_intake = px.pie(intake, names="Intake", values="count", title="TLs by Intake")
 st.plotly_chart(fig_intake)
 intake
 
 gender = hs["Gender"].value_counts().reset_index()
-fig_gender = px.bar(gender, x="Gender", y="count", title="TLs by Gender")
+fig_gender = px.pie(gender, names="Gender", values="count", title="TLs by Gender")
 st.plotly_chart(fig_gender)
 gender
 
 #Top Learners by Region
 region = hs["Region"].value_counts().reset_index()
-fig_region = px.bar(region, x="Region", y="count", title="TLs by Region")
+fig_region = px.pie(region, names="Region", values="count", title="TLs by Region")
 st.plotly_chart(fig_region)
 region
 
 #TL Houses
 house = hs["House Type"].value_counts().reset_index()
-fig_house = px.bar(house, x="House Type", y="count", title="TL Houses")
+fig_house = px.pie(house, names="House Type", values="count", title="TL Houses")
 st.plotly_chart(fig_house)
 house
 
 #TLs Living with their Father
 live_mother = hs["Live with Mother"].value_counts().reset_index()
-fig_mother = px.bar(live_mother, x="Live with Mother", y="count", title="TLs who live with their mother")
+fig_mother = px.pie(live_mother, names="Live with Mother", values="count", title="TLs who live with their mother")
 st.plotly_chart(fig_mother)
 live_mother
 
 #TLs Living with their Father
 live_father = hs["Live with Father"].value_counts().reset_index()
-fig_father = px.bar(live_father, x="Live with Father", y="count", title="TLs who live with their father")
+fig_father = px.pie(live_father, names="Live with Father", values="count", title="TLs who live with their father")
 st.plotly_chart(fig_father)
 live_father
 
 #Financial Support
 financial_support = hs["Financial Support Type"].value_counts().reset_index()
-fig_financial_support = px.bar(financial_support, x="Financial Support Type", y="count", title="TLs' Source of Financial Support")
+fig_financial_support = px.pie(financial_support, names="Financial Support Type", values="count", title="TLs' Source of Financial Support")
 st.plotly_chart(fig_financial_support)
 financial_support
 
