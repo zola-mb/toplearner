@@ -32,8 +32,8 @@ with text_column3:
 st.write("---")
 
 #Import data
-df = pd.read_excel("2025 Top Learner  High School - Main 20240912 (2).xlsx", sheet_name="Other Universities")
-hs = pd.read_excel("2025 Top Learner  High School - Main 20240912 (2).xlsx", sheet_name="High School")
+df = pd.read_excel("2025 Top Learner  High School - Main 20240912 (4).xlsx", sheet_name="Other Universities")
+hs = pd.read_excel("2025 Top Learner  High School - Main 20240912 (4).xlsx", sheet_name="High School")
 #Raw data
 #st.header("Raw Data")
 #df
