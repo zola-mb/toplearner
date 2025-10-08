@@ -17,7 +17,7 @@ from PIL import Image
 st.set_page_config(page_title="Top Learner Data", page_icon=":student:", layout="centered")
 st.title("TOP LEARNER DATA")
 img_contact_form = Image.open("Walmer High School - Masinyusane x Standard Bank (23 August 2024) (14).jpg")
-st.image(img_contact_form, use_column_width=True)
+st.image(img_contact_form, use_container_width=True)
 text_column1, text_column2, text_column3 = st.columns(3)
 with text_column1:
     st.subheader("Partner Schools")
