@@ -20,7 +20,7 @@ img_contact_form = Image.open("Walmer High School - Masinyusane x Standard Bank 
 st.image(img_contact_form, use_column_width=True)
 text_column1, text_column2, text_column3 = st.columns(3)
 with text_column1:
-    st.subheader("Schools")
+    st.subheader("Partner Schools")
     st.write("41")
 with text_column2:
     st.subheader("Number of Top Learners")
